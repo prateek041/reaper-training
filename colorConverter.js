@@ -93,12 +93,13 @@ function rgbToHsl(red, green, blue) {
 
   const difference = maxColorVal - minColorVal;
 
-  // If max and min are the same
+  // If max and min are not the same
   if (difference) {
     var luminanceVal = (maxColorVal + minColorVal) / 2;
 
     var Luminance = Math.round(luminanceVal * 100);
   } else {
+    // if max and min are same
     return {
       Luminance: 0,
       Saturation: 0,
@@ -138,10 +139,10 @@ function rgbToHsl(red, green, blue) {
 }
 
 function hueCalculator(hueVal) {
-  const hue = hueVal >= 0 ? hueVal * 60 : hueVal + 360;
+  const hue = hueVal >= 0 ? hueVal * 60 : hueVal * 60 + 360;
   return Math.round(hue);
 }
 
-const { Hue: h, Saturation: s, Luminance: l } = rgbToHsl(24, 98, 118);
+const { Hue: h, Saturation: s, Luminance: l } = rgbToHsl(1, 2, 3);
 
 console.log(h, s, l);
