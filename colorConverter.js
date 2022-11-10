@@ -142,6 +142,6 @@ function hueCalculator(hueVal) {
   return Math.round(hue);
 }
 
-const { Hue: h, Saturation: s, Luminance: l } = rgbToHsl(255, 0, 0);
+const { Hue: h, Saturation: s, Luminance: l } = rgbToHsl(24, 98, 118);
 
 console.log(h, s, l);
